@@ -1,0 +1,49 @@
+.contact-list-container {
+  height: 90%;
+  width: 95%;
+  margin: 2em 0 1em 2em;
+}
+
+.contact-list-search-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact-list-button-container {
+  flex: 2;
+}
+
+.contact-list-button {
+  margin-right: 1em;
+}
+
+.contact-list {
+  height: 90%;
+}
+
+.list-page-contact-card {
+  width: 100%;
+}
+
+.list-page-button-container {
+  width: 50%;
+}
+
+.list-page-button-icon {
+  margin-bottom: 1em;
+}
+
+.list-page-delete-admin-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+/*
+  this is needed since display: flex overrides html attribute hidden..
+  todo see about putting this in global css..
+*/
+[hidden] {
+  display: none !important;
+}
+
+

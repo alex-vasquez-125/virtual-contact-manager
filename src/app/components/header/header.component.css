@@ -1,0 +1,15 @@
+.app-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.nav-item-title {
+  flex: 2
+}
+
+.nav-item {
+  flex: 1
+}

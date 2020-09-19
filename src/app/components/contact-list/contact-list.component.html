@@ -1,0 +1,41 @@
+<div class="contact-list-container">
+  <div class="contact-list-search-container">
+    <span class="contact-list-button-container">
+      <button class="contact-list-button" mat-fab (click)="onAddClick($event)" [disabled]="isAddDisabled">
+        <mat-icon>add</mat-icon>
+      </button>
+      <button class="contact-list-button" mat-fab (click)="onEditClick($event)" [disabled]="isEditDisabled">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button class="contact-list-button" mat-fab (click)="onDeleteClick($event)" [disabled]="isDeleteDisabled">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </span>
+    <span>
+      <mat-form-field>
+        <mat-label>Search</mat-label>
+        <input matInput [formControl]="search" (keyup)="onFilterList($event)">
+      </mat-form-field>
+      <button mat-icon-button (click)="onClear()"><mat-icon>clear</mat-icon></button>
+    </span>
+  </div>
+  <cdk-virtual-scroll-viewport class="contact-list" [class.mat-elevation-z5]="true" itemSize="10">
+    <app-contact-list-item
+      *cdkVirtualFor="let contact of contactsToDisplay"
+      [contact]="contact"
+      [isDeleteCheckboxHidden]="isDeleteCheckboxHidden"
+      [isEditIconHidden]="isEditIconHidden"
+      (saveContactEdit)="onSaveContactEdit($event)"
+      (deleteContactEmitter)="onDeleteContactEmitter($event)"
+      (setCallbackEmitter)="onSetCallBackEmitter($event)"
+    >
+    </app-contact-list-item>
+  </cdk-virtual-scroll-viewport>
+</div>
+<!-- do i want to use angular form with this or am i good to go without angular
+  form control? just use angular material's form control?
+-->
+
+<!--
+  do i want to allow edit and delete at the same time? or lock one if the other is active??
+-->

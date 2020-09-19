@@ -1,0 +1,23 @@
+<div class="contact-list-item-container">
+  <div class="contact-list-item-checkbox-contact-container">
+    <mat-checkbox
+      class="contact-list-item-checkbox"
+      [hidden]="isDeleteCheckboxHidden"
+      [checked]="isCheckboxChecked"
+      (change)="onCheckboxChange($event)"
+    >
+    </mat-checkbox>
+    <mat-list-item class="contact-list-item">
+      {{ contact.firstName }} {{ contact.lastName }}
+    </mat-list-item>
+    <span [hidden]="isEditIconHidden">
+      <button mat-icon-button (click)="onEdit($event, contact)"><mat-icon>edit</mat-icon></button>
+    </span>
+  </div>
+  <div class="contact-list-item-divider-container">
+    <mat-divider class="contact-list-item-divider"></mat-divider>
+  </div>
+</div>
+<!--
+  i kinda want to make the edit icons hidden until i click the top level edit icon..
+-->

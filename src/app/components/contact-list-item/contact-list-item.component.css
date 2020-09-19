@@ -1,0 +1,25 @@
+.contact-list-item-container {
+  margin: 2em 2em 2em 2em
+}
+
+.contact-list-item-checkbox-contact-container {
+  display: flex;
+}
+
+.contact-list-item-divider-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.contact-list-item-checkbox {
+  margin-right: 1em;
+}
+
+.contact-list-item-divider {
+  width: 90%;
+}
+
+.contact-list-item {
+  width: 100%;
+}

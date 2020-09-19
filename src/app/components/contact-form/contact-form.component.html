@@ -1,0 +1,90 @@
+<mat-dialog-content class="contact-form-container">
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <span class="contact-form-fields-container">
+      <mat-form-field class="contact-form-fields">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field class="contact-form-fields">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName">
+      </mat-form-field>
+    </span>
+
+    <br>
+
+    <span class="contact-form-fields-container">
+      <mat-form-field class="contact-form-fields">
+        <mat-label>Phone Number</mat-label>
+        <input matInput formControlName="phoneNumber">
+      </mat-form-field>
+      <mat-form-field class="contact-form-fields">
+        <mat-label>Cell Phone Number</mat-label>
+        <input matInput formControlName="cellPhoneNumber">
+      </mat-form-field>
+    </span>
+
+    <br>
+
+    <span class="contact-form-fields-container">
+      <mat-form-field class="contact-form-fields">
+        <mat-label>Alternative Phone Number</mat-label>
+        <input matInput formControlName="alternativePhoneNumber">
+      </mat-form-field>
+      <mat-form-field class="contact-form-fields">
+        <mat-label>Primary Email Address</mat-label>
+        <input matInput formControlName="primaryEmailAddress">
+      </mat-form-field>
+    </span>
+
+    <br>
+
+    <span class="contact-form-fields-container">
+      <mat-form-field class="contact-form-fields">
+        <mat-label>Secondary Email Address</mat-label>
+        <input matInput formControlName="secondaryEmailAddress">
+      </mat-form-field>
+      <mat-form-field class="contact-form-fields">
+        <mat-label>Primary Address</mat-label>
+        <input matInput formControlName="primaryAddress">
+      </mat-form-field>
+    </span>
+
+    <br>
+
+    <span class="contact-form-fields-container">
+      <mat-form-field class="contact-form-fields">
+        <mat-label>Secondary Address</mat-label>
+        <input matInput formControlName="secondaryAddress">
+      </mat-form-field>
+      <mat-form-field class="contact-form-fields">
+        <mat-label>Website</mat-label>
+        <input matInput formControlName="website">
+      </mat-form-field>
+    </span>
+
+    <br>
+
+    <span class="contact-form-fields-container">
+      <mat-form-field class="contact-form-notes">
+        <mat-label>Notes</mat-label>
+        <textarea matInput formControlName="notes"></textarea>
+      </mat-form-field>
+    </span>
+
+    <br>
+
+    <span class="contact-form-fields-container">
+      <button mat-raised-button mat-dialog-close>Cancel</button>
+      <button type="submit" mat-raised-button mat-dialog-close>Submit</button>
+    </span>
+
+  </form>
+</mat-dialog-content>
+
+
+<!--
+  am i able to use mat button here for submit button?
+
+  todo complete the form. columns. if scrollable not needed drop mat-dialog-content
+-->
