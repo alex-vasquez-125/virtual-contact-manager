@@ -23,6 +23,7 @@ export class ContactListComponent implements OnInit {
   isEditDisabled: boolean = false;
   isDeleteDisabled: boolean = false;
   search = new FormControl('');
+  arr: Array<string> = new Array<string>();
 
   constructor(
     public contactService: ContactService,
@@ -65,34 +66,34 @@ export class ContactListComponent implements OnInit {
     });
 
     addContactForm.componentInstance.contactEmitter.subscribe((data) => {
-      let newContact: NewContact = {
-        firstName: data.firstName,
-        lastName: data.lastName,
-        phoneNumber: data.phoneNumber,
-        cellPhoneNumber: data.cellPhoneNumber,
-        alternativePhoneNumber: data.alternativePhoneNumber,
-        primaryEmailAddress : data.primaryAddress,
-        secondaryEmailAddress: data.secondaryEmailAddress,
-        primaryAddress: data.primaryAddress,
-        secondaryAddress: data.secondaryAddress,
-        website: data.website,
-        notes: data.notes,
-      };
+      // let newContact: NewContact = {
+      //   firstName: data.firstName,
+      //   lastName: data.lastName,
+      //   phoneNumber: data.phoneNumber,
+      //   cellPhoneNumber: data.cellPhoneNumber,
+      //   alternativePhoneNumber: data.alternativePhoneNumber,
+      //   primaryEmailAddress : data.primaryAddress,
+      //   secondaryEmailAddress: data.secondaryEmailAddress,
+      //   primaryAddress: data.primaryAddress,
+      //   secondaryAddress: data.secondaryAddress,
+      //   website: data.website,
+      //   notes: data.notes,
+      // };
 
-      this.contactService.saveAdd(newContact).subscribe((contactCreated) => {
-        if (contactCreated) {
-          const addDialog: MatDialogRef<DatabaseResultDialogComponent> = this.databaseResultDialog.open(DatabaseResultDialogComponent, {
-            disableClose: true,
-            data: {
-              databaseResultMsg: 'Contact created'
-            },
-          });
-
-          addDialog.afterClosed().subscribe(() => {
-            this.getContacts();
-          });
-        }
-      });
+      // this.contactService.saveAdd(newContact).subscribe((contactCreated) => {
+      //   if (contactCreated) {
+      //     const addDialog: MatDialogRef<DatabaseResultDialogComponent> = this.databaseResultDialog.open(DatabaseResultDialogComponent, {
+      //       disableClose: true,
+      //       data: {
+      //         databaseResultMsg: 'Contact created'
+      //       },
+      //     });
+      //
+      //     addDialog.afterClosed().subscribe(() => {
+      //       this.getContacts();
+      //     });
+      //   }
+      // });
     });
   }
 
@@ -122,7 +123,7 @@ export class ContactListComponent implements OnInit {
 
       editDialog.afterClosed().subscribe(() => {
         this.getContacts();
-      })
+      });
     });
   }
 

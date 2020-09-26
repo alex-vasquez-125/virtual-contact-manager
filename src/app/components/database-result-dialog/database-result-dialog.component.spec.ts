@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DatabaseResultDialogComponent } from './database-result-dialog.component';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 describe('DatabaseResultDialogComponent', () => {
   let component: DatabaseResultDialogComponent;
@@ -8,7 +9,15 @@ describe('DatabaseResultDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DatabaseResultDialogComponent ]
+      declarations: [ DatabaseResultDialogComponent ],
+      providers: [
+        {
+          provide: MAT_DIALOG_DATA, useValue: {},
+        },
+        {
+          provide: MatDialogRef, useValue: {}
+        }
+      ]
     })
     .compileComponents();
   }));
