@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('virtual-contacts-angular app is running!');
+    expect(page.getTitleText()).toEqual('Virtual Contact Manager');
   });
 
   afterEach(async () => {
