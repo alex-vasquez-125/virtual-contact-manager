@@ -5,7 +5,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DatabaseResultDialogComponent } from '../database-result-dialog/database-result-dialog.component';
 import { ContactFormComponent } from '../contact-form/contact-form.component';
 import { FormControl } from '@angular/forms';
-// import { NewContact } from '../../pojos/new-contact';
+import { NewContact } from '../../pojos/new-contact';
 
 @Component({
   selector: 'app-contact-list',
@@ -66,34 +66,34 @@ export class ContactListComponent implements OnInit {
     });
 
     addContactForm.componentInstance.contactEmitter.subscribe((data) => {
-      // let newContact: NewContact = {
-      //   firstName: data.firstName,
-      //   lastName: data.lastName,
-      //   phoneNumber: data.phoneNumber,
-      //   cellPhoneNumber: data.cellPhoneNumber,
-      //   alternativePhoneNumber: data.alternativePhoneNumber,
-      //   primaryEmailAddress : data.primaryAddress,
-      //   secondaryEmailAddress: data.secondaryEmailAddress,
-      //   primaryAddress: data.primaryAddress,
-      //   secondaryAddress: data.secondaryAddress,
-      //   website: data.website,
-      //   notes: data.notes,
-      // };
+      let newContact: NewContact = {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        phoneNumber: data.phoneNumber,
+        cellPhoneNumber: data.cellPhoneNumber,
+        alternativePhoneNumber: data.alternativePhoneNumber,
+        primaryEmailAddress : data.primaryAddress,
+        secondaryEmailAddress: data.secondaryEmailAddress,
+        primaryAddress: data.primaryAddress,
+        secondaryAddress: data.secondaryAddress,
+        website: data.website,
+        notes: data.notes,
+      };
 
-      // this.contactService.saveAdd(newContact).subscribe((contactCreated) => {
-      //   if (contactCreated) {
-      //     const addDialog: MatDialogRef<DatabaseResultDialogComponent> = this.databaseResultDialog.open(DatabaseResultDialogComponent, {
-      //       disableClose: true,
-      //       data: {
-      //         databaseResultMsg: 'Contact created'
-      //       },
-      //     });
-      //
-      //     addDialog.afterClosed().subscribe(() => {
-      //       this.getContacts();
-      //     });
-      //   }
-      // });
+      this.contactService.saveAdd(newContact).subscribe((contactCreated) => {
+        if (contactCreated) {
+          const addDialog: MatDialogRef<DatabaseResultDialogComponent> = this.databaseResultDialog.open(DatabaseResultDialogComponent, {
+            disableClose: true,
+            data: {
+              databaseResultMsg: 'Contact created'
+            },
+          });
+
+          addDialog.afterClosed().subscribe(() => {
+            this.getContacts();
+          });
+        }
+      });
     });
   }
 
