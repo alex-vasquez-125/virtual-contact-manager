@@ -3,7 +3,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ContactListItemComponent } from './contact-list-item.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Contact } from '../../pojos/contact';
-// import { HttpClient } from '@angular/common/http';
 
 describe('ListItemComponent', () => {
   let component: ContactListItemComponent;
@@ -22,7 +21,7 @@ describe('ListItemComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ContactListItemComponent);
     component = fixture.componentInstance;
-    let contact: Contact = new Contact(1,
+    const contact: Contact = new Contact(1,
       'Alex',
       'V',
       '1-234-567-8910',

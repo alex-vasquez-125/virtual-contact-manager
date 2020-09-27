@@ -5,7 +5,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DatabaseResultDialogComponent } from '../database-result-dialog/database-result-dialog.component';
 import { ContactFormComponent } from '../contact-form/contact-form.component';
 import { FormControl } from '@angular/forms';
-import { NewContact } from '../../pojos/new-contact';
+// import { NewContact } from '../../pojos/new-contact';
 
 @Component({
   selector: 'app-contact-list',
@@ -152,11 +152,12 @@ export class ContactListComponent implements OnInit {
       } else if (this.contactsToDelete.length > 1) {
         this.executeCheckboxCallbacks();
         this.contactService.deleteContacts(this.contactsToDelete).subscribe((result) => {
-          const deleteContactsDialog: MatDialogRef<DatabaseResultDialogComponent> = this.databaseResultDialog.open(DatabaseResultDialogComponent, {
-            disableClose: true,
-            data: {
-              databaseResultMsg: 'deleted!'
-            }
+          const deleteContactsDialog: MatDialogRef<DatabaseResultDialogComponent>
+            = this.databaseResultDialog.open(DatabaseResultDialogComponent, {
+              disableClose: true,
+              data: {
+                databaseResultMsg: 'deleted!'
+              }
           });
 
           deleteContactsDialog.afterClosed().subscribe(() => {

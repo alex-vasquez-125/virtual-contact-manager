@@ -18,6 +18,6 @@ export class DatabaseResultDialogComponent implements OnInit {
   }
 
   onClose(): void {
-    this.databaseResultDialogRef.close();
+    this.databaseResultDialogRef.close('');
   }
 }
