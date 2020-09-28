@@ -23,7 +23,6 @@ export class ContactListComponent implements OnInit {
   isEditDisabled: boolean = false;
   isDeleteDisabled: boolean = false;
   search = new FormControl('');
-  arr: Array<string> = new Array<string>();
 
   constructor(
     public contactService: ContactService,
