@@ -16,10 +16,10 @@ pipeline {
         echo 'deploying..'
       }
     }
-    post {
-      always {
-        echo 'done!'
-      }
+  }
+  post {
+    always {
+      echo 'done!'
     }
   }
 }
