@@ -6,9 +6,13 @@ pipeline {
     stage('Unit test') {
       steps {
         sh 'pwd'
-        echo 'running unit tests'
-        sh 'npm install'
-        sh 'npm run test'
+        dir('virtual-contacts-angular') {
+          sh 'pwd'
+          echo 'running unit tests'
+          sh 'npm install'
+          sh 'npm run test'
+        }
+
       }
     }
     stage('Build') {
