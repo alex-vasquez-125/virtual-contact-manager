@@ -4,6 +4,7 @@ pipeline {
     stage('Unit test') {
       steps {
         echo 'running unit tests'
+        sh 'npm run test'
       }
     }
     stage('Build') {
