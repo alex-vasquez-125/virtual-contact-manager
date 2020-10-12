@@ -5,6 +5,7 @@ pipeline {
   stages {
     stage('Unit test') {
       steps {
+        sh 'pwd'
         echo 'running unit tests'
         sh 'npm install'
         sh 'npm run test'
