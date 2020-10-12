@@ -7,22 +7,9 @@ pipeline {
       steps {
         sh 'pwd'
         sh 'ls -la'
-        dir('virtual-contacts-angular/src') {
-          sh 'pwd'
-          sh 'ls -la'
-        }
-        dir('virtual-contacts-angular/src/app') {
-          sh 'pwd'
-          sh 'ls -la'        
-        }
-        dir('virtual-contacts-angular') {
-          sh 'pwd'
-          sh 'ls -la'
-          sh 'npm -v'
-          sh 'node -v'
-          echo 'running unit tests'
-          sh 'npm install'
-          sh 'npm run test'
+        echo 'running unit tests'
+        sh 'npm install'
+        sh 'npm run test'
         }
       }
     }
