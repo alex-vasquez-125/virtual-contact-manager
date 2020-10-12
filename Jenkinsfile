@@ -7,6 +7,8 @@ pipeline {
       steps {
         sh 'pwd'
         sh 'ls -la'
+        sh 'ls -la ./virtual-contacts-angular'
+        sh 'cat package.json'
         echo 'running unit tests'
         sh 'npm install'
         sh 'npm run test'
