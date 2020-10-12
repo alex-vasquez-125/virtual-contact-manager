@@ -5,10 +5,14 @@ pipeline {
   stages {
     stage('Unit test') {
       steps {
+        sh 'whoami'
         sh 'pwd'
         sh 'ls -la'
         sh 'ls -la ./virtual-contacts-angular'
         sh 'cat package.json'
+        echo 'chown'
+        sh 'sudo chmod -R 777'
+        sh 'ls -la'
         echo 'installing angular cli globally'
         sh 'npm install -g @angular/cli'
         echo 'running unit tests'
