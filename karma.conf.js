@@ -35,10 +35,13 @@ module.exports = function (config) {
     customLaunchers: {
       MyChromeHeadless: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox']
+        flags: [
+          '--no-sandbox',
+          '--proxy-auto-detect'
+        ]
       }
     },
-    singleRun: true,
+    singleRun: false,
     restartOnFileChange: true
   });
 };
