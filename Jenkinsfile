@@ -7,9 +7,7 @@ pipeline {
   stages {
     stage('Unit test') {
       steps {
-        sh 'whoami'
-        sh 'pwd'
-        sh 'ls -la'
+        sh 'env'
         sh 'rm -r node_modules'
         sh 'rm package-lock.json'
         echo 'running npm install'
