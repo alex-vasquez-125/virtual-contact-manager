@@ -10,8 +10,12 @@ pipeline {
         sh 'whoami'
         sh 'pwd'
         sh 'ls -la'
+        sh 'rm -r node_modules'
+        sh 'rm package-lock.json'
+        echo 'running npm install'
+        sh 'npm install'
         echo 'running unit tests'
-        sh 'ng test --no-watch --code-coverage'
+        sh 'npm run test'
       }
     }
     stage('Build') {
