@@ -2,8 +2,6 @@
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 var path = require('path');
 process.env.CHROME_BIN = require('puppeteer').executablePath();
-process.env.NO_PROXY = 'localhost, 0.0.0.0/4201, 0.0.0.0/9876';
-process.env.no_proxy = 'localhost, 0.0.0.0/4201, 0.0.0.0/9876';
 
 module.exports = function (config) {
   config.set({
@@ -40,7 +38,7 @@ module.exports = function (config) {
         flags: ['--no-sandbox']
       }
     },
-    singleRun: false,
+    singleRun: true,
     restartOnFileChange: true
   });
 };
