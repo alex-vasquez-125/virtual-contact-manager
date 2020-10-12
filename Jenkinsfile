@@ -6,6 +6,12 @@ pipeline {
     stage('Unit test') {
       steps {
         sh 'pwd'
+        dir('virtual-contacts-angular/src') {
+          sh 'pwd'
+        }
+        dir('virtual-contacts-angular/src/app') {
+          sh 'pwd'
+        }
         dir('virtual-contacts-angular') {
           sh 'pwd'
           sh 'ls'
@@ -15,7 +21,6 @@ pipeline {
           sh 'npm install'
           sh 'npm run test'
         }
-
       }
     }
     stage('Build') {
