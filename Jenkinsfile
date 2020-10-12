@@ -11,7 +11,7 @@ pipeline {
         sh 'ls -la ./virtual-contacts-angular'
         sh 'cat package.json'
         echo 'chown'
-        sh 'sudo chown -R node /usr/local/lib/node_modules/'
+        sh 'chown -R node /usr/local/lib/node_modules/'
         sh 'ls -la'
         echo 'installing angular cli globally'
         sh 'npm install -g @angular/cli'
