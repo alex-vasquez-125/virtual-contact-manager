@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    docker { image 'node:14-alpine3.12' }
+  }
   stages {
     stage('Unit test') {
       steps {
