@@ -8,6 +8,9 @@ pipeline {
         sh 'pwd'
         dir('virtual-contacts-angular') {
           sh 'pwd'
+          sh 'ls'
+          sh 'npm -v'
+          sh 'node -v'
           echo 'running unit tests'
           sh 'npm install'
           sh 'npm run test'
