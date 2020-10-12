@@ -37,8 +37,7 @@ module.exports = function (config) {
         base: 'ChromeHeadless',
         flags: [
           '--no-sandbox',
-          '--proxy-bypass-list=*',
-          '--proxy-server=localhost'
+          '--headless'
         ]
       }
     },
