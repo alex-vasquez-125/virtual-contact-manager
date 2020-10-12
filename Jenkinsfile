@@ -11,7 +11,7 @@ pipeline {
         sh 'pwd'
         sh 'ls -la'
         echo 'running unit tests'
-        sh 'npm run test'
+        sh 'ng test --no-watch --code-coverage'
       }
     }
     stage('Build') {
