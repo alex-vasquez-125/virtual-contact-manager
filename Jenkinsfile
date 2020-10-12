@@ -10,7 +10,6 @@ pipeline {
         echo 'running unit tests'
         sh 'npm install'
         sh 'npm run test'
-        }
       }
     }
     stage('Build') {
