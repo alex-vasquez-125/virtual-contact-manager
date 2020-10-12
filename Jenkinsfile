@@ -6,15 +6,18 @@ pipeline {
     stage('Unit test') {
       steps {
         sh 'pwd'
+        sh 'ls -la'
         dir('virtual-contacts-angular/src') {
           sh 'pwd'
+          sh 'ls -la'
         }
         dir('virtual-contacts-angular/src/app') {
           sh 'pwd'
+          sh 'ls -la'        
         }
         dir('virtual-contacts-angular') {
           sh 'pwd'
-          sh 'ls'
+          sh 'ls -la'
           sh 'npm -v'
           sh 'node -v'
           echo 'running unit tests'
