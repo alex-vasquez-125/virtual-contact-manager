@@ -10,8 +10,6 @@ pipeline {
         sh 'whoami'
         sh 'pwd'
         sh 'ls -la'
-        echo 'installing angular cli globally'
-        sh 'npm install -g @angular/cli'
         echo 'running unit tests'
         sh 'npm run test'
       }
