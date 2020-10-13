@@ -6,7 +6,7 @@ pipeline {
   }
   environment {
     PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+    PUPPETEER_EXECUTABLE_PATH='/usr/bin/chromium-browser'
   }
   stages {
     stage('Unit test') {
