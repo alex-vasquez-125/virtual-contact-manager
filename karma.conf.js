@@ -23,7 +23,7 @@ module.exports = function (config) {
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
-    reporters: ['junit'],
+    reporters: ['progress', 'junit'],
     junitReporter: {
       outputDir: path.join(__dirname, '/reports/unit/')
     },
