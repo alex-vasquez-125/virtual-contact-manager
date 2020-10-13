@@ -8,7 +8,6 @@ console.log('process.env.CHROME_BIN: ', process.env.CHROME_BIN);
 module.exports = function (config) {
   config.set({
     basePath: '',
-    captureTimeout: 100000,
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
@@ -46,6 +45,10 @@ module.exports = function (config) {
       }
     },
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    captureTimeout: 210000,
+    browserDisconnectTolerance: 3,
+    browserDisconnectTimeout: 210000,
+    browserNoActivityTimeout: 210000,
   });
 };
