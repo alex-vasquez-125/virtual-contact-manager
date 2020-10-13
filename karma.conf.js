@@ -23,7 +23,7 @@ module.exports = function (config) {
     },
     coverageIstanbulReporter: {
       dir: path.join(__dirname, './coverage/virtual-contacts-angular'),
-      reports: ['html', 'lcovonly', 'text-summary'],
+      reports: ['cobertura'],
       fixWebpackSourcePaths: true
     },
     reporters: ['junit'],

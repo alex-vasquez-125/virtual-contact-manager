@@ -8,6 +8,8 @@ pipeline {
     stage('Unit test') {
       steps {
         sh 'env'
+        sh 'ls -la'
+        sh 'pwd'
         sh 'rm -r node_modules'
         sh 'rm package-lock.json'
         sh 'export CHROME_BIN=/var/jenkins_home/workspace/virtual-contact-manager_master/node_modules/puppeteer/.local-chromium/linux-800071/chrome-linux/chrome'
