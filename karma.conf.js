@@ -43,7 +43,8 @@ module.exports = function (config) {
           '--no-sandbox',
           '--disable-setuid-sandbox',
           '--disable-dev-shm-usage',
-          '--remote-debugging-port=9223',
+          '--remote-debugging-address=0.0.0.0',
+          '--remote-debugging-port=9876',
           '--headless',
           '--disable-gpu'
         ]
