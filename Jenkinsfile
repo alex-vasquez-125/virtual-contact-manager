@@ -1,20 +1,13 @@
 pipeline {
   agent {
     docker {
-      image 'node:14-alpine'
+      filename 'Dockerfile'
+      label 'my-dockerfile'
     }
-  }
-  environment {
-    PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-    PUPPETEER_EXECUTABLE_PATH='/usr/bin/chromium-browser'
   }
   stages {
     stage('Unit test') {
       steps {
-        sh 'apk add sudo'
-        echo 'installing chromium and required deps'
-        sh 'sudo apk add --no-cache chromium nss freetype freetype-dev harfbuzz ca-certificates ttf-freefont nodejs yarn'
-        sh 'yarn add puppeteer@1.19.0'
         echo 'running npm install'
         sh 'npm install'
         echo 'running unit tests'
