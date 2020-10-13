@@ -1,15 +1,12 @@
 pipeline {
   agent {
     docker {
-      image 'node:14-alpine'
+      image 'node:12-alpine'
     }
   }
   stages {
     stage('Unit test') {
       steps {
-        sh 'env'
-        sh 'ls -la'
-        sh 'pwd'
         echo 'running npm install'
         sh 'npm install'
         echo 'running unit tests'
