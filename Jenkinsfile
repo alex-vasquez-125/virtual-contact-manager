@@ -11,6 +11,7 @@ pipeline {
   stages {
     stage('Unit test') {
       steps {
+        sh 'whoami'
         echo 'installing chromium and required deps'
         sh 'sudo apk add --no-cache chromium nss freetype freetype-dev harfbuzz ca-certificates ttf-freefont nodejs yarn'
         sh 'yarn add puppeteer@1.19.0'
