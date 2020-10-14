@@ -26,9 +26,9 @@ pipeline {
   }
   post {
     always {
-      junit 'virtual-contacts-angular/reports/unit/**/*.xml'
+      junit 'virtual-contacts-angular/reports/unit/*.xml'
       cobertura(
-        coberturaReportFile: 'virtual-contacts-angular/reports/coverage/**/*.xml'
+        coberturaReportFile: 'virtual-contacts-angular/reports/coverage/*.xml'
       )
     }
   }
