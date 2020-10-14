@@ -19,7 +19,7 @@ module.exports = function (config) {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {
-      dir: path.join(__dirname, './coverage/virtual-contacts-angular'),
+      dir: path.join(__dirname, '/reports/coverage/'),
       reports: ['cobertura'],
       fixWebpackSourcePaths: true
     },
