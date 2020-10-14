@@ -26,6 +26,8 @@ pipeline {
   }
   post {
     always {
+      sh 'pwd'
+      sh 'ls -la'
       junit 'virtual-contacts-angular/reports/unit/*.xml'
       cobertura(
         coberturaReportFile: 'virtual-contacts-angular/reports/coverage/*.xml'
