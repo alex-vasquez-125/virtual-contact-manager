@@ -30,12 +30,13 @@ pipeline {
         echo 'Promoting code to master..'
       }
     }
+    // this next block gets executed on PRs also
     stage('Every stage but master') {
       when {
         not { branch 'master' }
       }
       steps {
-        echo 'This branch is not master '
+        echo 'This branch is not master'
         echo BRANCH_NAME
       }
     }
@@ -47,8 +48,6 @@ pipeline {
   }
   post {
     always {
-      sh 'pwd'
-      sh 'ls -la'
       junit 'reports/unit/*.xml'
       cobertura(
         coberturaReportFile: 'reports/coverage/*.xml'
