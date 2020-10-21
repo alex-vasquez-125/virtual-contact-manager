@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Unit test') {
       steps {
-        sh 'env'
+        env
         echo 'running npm install'
         sh 'npm install'
         echo 'running unit tests'
@@ -15,11 +15,14 @@ pipeline {
       }
     }
     stage('Build') {
-      when {
-        branch 'master'
-      }
       steps {
         echo 'building..'
+        script {
+          if (env.BRANCH_NAME == 'master') {
+            echo 'building in master'
+          }
+        }
+        echo 'finished building..'
       }
     }
     stage('Promoting code to master branch') {
@@ -41,6 +44,9 @@ pipeline {
       }
     }
     stage('Deploy') {
+      when {
+        branch 'master'
+      }
       steps {
         echo 'deploying..'
       }
