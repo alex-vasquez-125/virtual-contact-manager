@@ -46,7 +46,10 @@ pipeline {
     }
     stage('Deploy') {
       when {
-        branch 'master'
+        anyOf {
+          branch 'master';
+          branch 'jenkins-multi-branch'
+        }
       }
       steps {
         echo 'deploying..'
