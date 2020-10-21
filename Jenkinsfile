@@ -17,6 +17,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'building..'
+        // this script block should only execute on master
         script {
           if (env.BRANCH_NAME == 'master') {
             echo 'building in master'
