@@ -15,12 +15,11 @@ pipeline {
       }
     }
     stage('Build') {
+      when {
+        branch 'master'
+      }
       steps {
         echo 'building..'
-        when {
-          branch 'master'
-        }
-        echo 'should only build on master'
       }
     }
     stage('Promoting code to master branch') {
