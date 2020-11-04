@@ -17,7 +17,8 @@ pipeline {
           env.NEW_VERSION = '1'
           echo 'about to try if block'
           sh 'env'
-          sh "echo $0 && if [ -z \"$NEW_VERSION\" ]; then echo \"nothing in new version\"; else sed -i \"s/0.0.0/$NEW_VERSION.1.1/g\" package.json; fi"
+          sh 'echo $0'
+          sh "if [ -z \"$NEW_VERSION\" ]; then echo \"nothing in new version\"; else sed -i \"s/0.0.0/$NEW_VERSION.1.1/g\" package.json; fi"
           sh 'cat package.json'
         }
       }
