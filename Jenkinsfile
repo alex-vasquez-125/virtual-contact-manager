@@ -4,9 +4,6 @@ pipeline {
       filename 'Dockerfile'
     }
   }
-  environment {
-    NEW_VERSION = ''
-  }
   stages {
     stage('Unit test') {
       steps {
@@ -15,8 +12,13 @@ pipeline {
         sh 'npm install'
         echo 'running unit tests'
         sh 'npm run test'
-        echo 'about to try if block'
-        sh "if [ -z \"$NEW_VERSION\" ]; then echo \"nothing in new version\"; else echo \"new version is $NEW_VERSION\"; fi"
+        sh 'env'
+        script {
+          env.NEW_VERSION = ''
+          echo 'about to try if block'
+          sh 'env'
+          sh "if [ -z \"$NEW_VERSION\" ]; then echo \"nothing in new version\"; else echo \"new version is $NEW_VERSION\"; fi"
+        }
       }
     }
     stage('Build') {
