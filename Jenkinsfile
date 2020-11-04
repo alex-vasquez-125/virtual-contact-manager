@@ -12,6 +12,7 @@ pipeline {
         sh 'npm install'
         echo 'running unit tests'
         sh 'npm run test'
+        sh "if [ -z \"NEW_VERSION\" ]; then echo \"nothing in new version\"; else echo \"new version is $NEW_VERSION\"; fi"
       }
     }
     stage('Build') {
