@@ -14,7 +14,7 @@ pipeline {
         sh 'npm run test'
         sh 'env'
         script {
-          env.NEW_VERSION = ''
+          env.NEW_VERSION = '1'
           echo 'about to try if block'
           sh 'env'
           sh "if [ -z \"$NEW_VERSION\" ]; then echo \"nothing in new version\"; else echo \"new version is $NEW_VERSION\"; fi"
