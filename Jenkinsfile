@@ -18,6 +18,7 @@ pipeline {
           echo 'about to try if block'
           sh 'env'
           sh "ls -a && if [ -z \"$NEW_VERSION\" ]; then echo \"nothing in new version\"; else sed -i \"s/0.0.0/1.1.1/g\" package.json; fi"
+          sh 'cat package.json'
         }
       }
     }
