@@ -1,6 +1,6 @@
 {
   "name": "virtual-contacts-angular",
-  "version": "0.0.1-RC.1",
+  "version": "0.0.1-RC.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
