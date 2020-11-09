@@ -13,9 +13,12 @@ pipeline {
         sh 'npm run test'
         sh 'env'
         script {
+          println "checking currentBuild"
+          println currentBuild
+          println "checking get build causes()"
           def causes = currentBuild.getBuildCauses()
           println causes
-          println "checking currentBuild"
+
           println currentBuild.getBuildVariables()
 
           def changeSetList = currentBuild.getChangeSets()
@@ -25,17 +28,21 @@ pipeline {
           changeSetList.eachWithIndex { changeSet, index ->
             println "index: $index"
             println "changeSet: $changeSet"
-            println changeSet
-            println changeSet.getAuthor()
-            println changeSet.getAuthorEmail()
-            println changeSet.getBranch()
-            println changeSet.getComment()
-            println changeSet.getCommentAnnotated()
-            println changeSet.getCommitId()
-            println changeSet.getId()
-            println changeSet.getMsg()
-            println changeSet.getParentCommit()
-            println changeSet.getRevision()
+
+            changeSet.eachWithIndex { innerChangeSet, innerIndex ->
+              println innerChangeSet
+              println innerChangeSet.getAuthor()
+              println innerChangeSet.getAuthorEmail()
+              println innerChangeSet.getBranch()
+              println innerChangeSet.getComment()
+              println innerChangeSet.getCommentAnnotated()
+              println innerChangeSet.getCommitId()
+              println innerChangeSet.getId()
+              println innerChangeSet.getMsg()
+              println innerChangeSet.getParentCommit()
+              println innerChangeSet.getRevision()
+            }
+
             // script not permitted to access this def gitChangeSetList = changeSet.getLogs()
             changeSet.eachWithIndex { innerChangeSet, innerIndex ->
               println "innerChangeSet"
