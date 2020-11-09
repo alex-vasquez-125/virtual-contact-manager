@@ -19,11 +19,22 @@ pipeline {
           println currentBuild.getBuildVariables()
 
           def changeSetList = currentBuild.getChangeSets()
+          println "changeSetList class: $changeSetList.getClass()"
+
+
+          
           changeSetList.eachWithIndex { changeSet, index ->
             println "index: $index"
             println "changeSet: $changeSet"
             println changeSet
             println changeSet.getClass()
+            def gitChangeSetList = changeSet.getLogs()
+            gitChangeSetList.eachWithIndex { innerChangeSet, innerIndex ->
+              println "innerChangeSet"
+              println innerChangeSet
+              println innerIndex
+            }
+
           } // 0 & hudson.plugins.git.GitChangeSetList@2fe172db
 
           println currentBuild.getCurrentResult() // SUCCESS
