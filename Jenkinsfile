@@ -22,15 +22,17 @@ pipeline {
           changeSetList.eachWithIndex { changeSet, index ->
             println "index: $index"
             println "changeSet: $changeSet"
-          }
-          
-          println currentBuild.getCurrentResult()
-          println currentBuild.getDescription()
-          println currentBuild.getDisplayName()
-          println currentBuild.getFullDisplayName()
-          println currentBuild.getFullProjectName()
-          println currentBuild.getId()
-          println currentBuild.getNumber()
+            println changeSet
+            println changeSet.getClass()
+          } // 0 & hudson.plugins.git.GitChangeSetList@2fe172db
+
+          println currentBuild.getCurrentResult() // SUCCESS
+          println currentBuild.getDescription() // null
+          println currentBuild.getDisplayName() // build number #19
+          println currentBuild.getFullDisplayName() // virtual-contact-manager >> random-branch #19
+          println currentBuild.getFullProjectName() // virtual-contact-manager/random-branch
+          println currentBuild.getId() // build number 19
+          println currentBuild.getNumber() // build number 19
           println "done checking currentBuild"
           // script not permitted to use this method println currentBuild.rawBuild.getClass()
           // script not permitted to use this method println currentBuild.getRawBuild()
