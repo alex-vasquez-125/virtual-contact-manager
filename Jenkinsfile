@@ -8,9 +8,9 @@ pipeline {
     stage('Unit test') {
       steps {
         echo 'running npm install'
-        sh 'npm install'
+        // sh 'npm install'
         echo 'running unit tests'
-        sh 'npm run test'
+        // sh 'npm run test'
         sh 'env'
         script {
           println "checking currentBuild"
@@ -38,7 +38,7 @@ pipeline {
               // scripts not permitted to use this println innerChangeSet.getAuthorEmail()
               // not permitted println innerChangeSet.getBranch()
               // not permitted println innerChangeSet.getComment()
-              println innerChangeSet.getCommentAnnotated()
+              // not permitted println innerChangeSet.getCommentAnnotated()
               println innerChangeSet.getCommitId()
               println innerChangeSet.getId()
               println innerChangeSet.getMsg()
