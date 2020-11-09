@@ -13,7 +13,7 @@ pipeline {
         echo 'running unit tests'
         // sh 'npm run test'
         sh 'env'
-        sh 'git status'
+        // git not found.. sh 'git status'
         script {
           println "checking currentBuild"
           println currentBuild
