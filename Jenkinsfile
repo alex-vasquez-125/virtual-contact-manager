@@ -21,9 +21,6 @@ pipeline {
           def changeSetList = currentBuild.getChangeSets()
           println "changeSetList class"
           println changeSetList.getClass()
-          println changeSetList.getKind()
-
-
 
           changeSetList.eachWithIndex { changeSet, index ->
             println "index: $index"
