@@ -28,7 +28,6 @@ pipeline {
             println "index: $index"
             println "changeSet: $changeSet"
             println changeSet
-            println changeSet.getClass()
             // script not permitted to access this def gitChangeSetList = changeSet.getLogs()
             gitChangeSetList.eachWithIndex { innerChangeSet, innerIndex ->
               println "innerChangeSet"
