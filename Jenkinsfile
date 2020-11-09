@@ -14,14 +14,17 @@ pipeline {
         sh 'env'
         script {
           def causes = currentBuild.getBuildCauses()
-          def specificCause = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
           println causes
-          println specificCause
-          println "currentBuild"
-          println currentBuild.getClass()
-          println "build causes"
-          println causes.userId
-          println causes.shortDescription
+          println "checking currentBuild"
+          println currentBuild.getBuildVariables()
+          println currentBuild.getChangeSets()
+          println currentBuild.getCurrentResults()
+          println currentBuild.getDescription()
+          println currentBuild.getDisplayName()
+          println currentBuild.getFullDisplayName()
+          println currentBuild.getFullProjectName()
+          println currentBuild.getId()
+          println currentBuild.getNumber()
           // script not permitted to use this method println currentBuild.rawBuild.getClass()
           // script not permitted to use this method println currentBuild.getRawBuild()
         }
