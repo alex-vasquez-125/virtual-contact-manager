@@ -32,7 +32,7 @@ pipeline {
             changeSet.eachWithIndex { innerChangeSet, innerIndex ->
               println innerChangeSet
               println innerChangeSet.getAuthor()
-              println innerChangeSet.getAuthorEmail()
+              // scripts not permitted to use this println innerChangeSet.getAuthorEmail()
               println innerChangeSet.getBranch()
               println innerChangeSet.getComment()
               println innerChangeSet.getCommentAnnotated()
@@ -44,12 +44,6 @@ pipeline {
             }
 
             // script not permitted to access this def gitChangeSetList = changeSet.getLogs()
-            changeSet.eachWithIndex { innerChangeSet, innerIndex ->
-              println "innerChangeSet"
-              println innerChangeSet
-              println innerIndex
-            }
-
           } // 0 & hudson.plugins.git.GitChangeSetList@2fe172db
 
           println currentBuild.getCurrentResult() // SUCCESS
