@@ -18,6 +18,8 @@ pipeline {
           def specificCause = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
           println causes
           println specificCause
+          println "currentBuild"
+          println currentBuild
         }
       }
     }
