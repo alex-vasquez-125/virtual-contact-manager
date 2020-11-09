@@ -19,8 +19,11 @@ pipeline {
           println specificCause
           println "currentBuild"
           println currentBuild.getClass()
+          println "build causes"
+          println causes.userId
+          println causes.userName
           // script not permitted to use this method println currentBuild.rawBuild.getClass()
-          println currentBuild.getRawBuild()
+          // script not permitted to use this method println currentBuild.getRawBuild()
         }
       }
     }
