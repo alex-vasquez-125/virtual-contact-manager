@@ -40,7 +40,7 @@ pipeline {
               // not permitted println innerChangeSet.getComment()
               // not permitted println innerChangeSet.getCommentAnnotated()
               println innerChangeSet.getCommitId()
-              println innerChangeSet.getId()
+              // not permitted println innerChangeSet.getId()
               println innerChangeSet.getMsg()
               println innerChangeSet.getParentCommit()
               println innerChangeSet.getRevision()
