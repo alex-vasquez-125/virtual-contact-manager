@@ -20,6 +20,7 @@ pipeline {
           println "checking get build causes()"
           def causes = currentBuild.getBuildCauses()
           println causes
+          println causes.getClass()
 
           println currentBuild.getBuildVariables()
           println currentBuild.fullDisplayName
