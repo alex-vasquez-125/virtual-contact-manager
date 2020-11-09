@@ -17,8 +17,14 @@ pipeline {
           println causes
           println "checking currentBuild"
           println currentBuild.getBuildVariables()
-          println currentBuild.getChangeSets()
-          println currentBuild.getCurrentResults()
+
+          def changeSetList = currentBuild.getChangeSets()
+          changeSetList.eachWithIndex { changeSet, index ->
+            println "index: $index"
+            println "changeSet: $changeSet"
+          }
+          
+          println currentBuild.getCurrentResult()
           println currentBuild.getDescription()
           println currentBuild.getDisplayName()
           println currentBuild.getFullDisplayName()
