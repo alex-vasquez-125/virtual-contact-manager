@@ -1,8 +1,9 @@
 pipeline {
   agent {
-    dockerfile {
-      filename 'Dockerfile'
-    }
+    any
+//     dockerfile {
+//       filename 'Dockerfile'
+//     }
   }
   stages {
     stage('Unit test') {
