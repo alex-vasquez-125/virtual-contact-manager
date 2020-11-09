@@ -33,7 +33,7 @@ pipeline {
               println innerChangeSet
               println innerChangeSet.getAuthor()
               // scripts not permitted to use this println innerChangeSet.getAuthorEmail()
-              println innerChangeSet.getBranch()
+              // not permitted println innerChangeSet.getBranch()
               println innerChangeSet.getComment()
               println innerChangeSet.getCommentAnnotated()
               println innerChangeSet.getCommitId()
