@@ -20,6 +20,9 @@ pipeline {
           println causes
 
           println currentBuild.getBuildVariables()
+          println currentBuild.fullDisplayName
+          println currentBuild.description
+          println currentBuild.id
 
           def changeSetList = currentBuild.getChangeSets()
           println "changeSetList class"
@@ -34,7 +37,7 @@ pipeline {
               println innerChangeSet.getAuthor()
               // scripts not permitted to use this println innerChangeSet.getAuthorEmail()
               // not permitted println innerChangeSet.getBranch()
-              println innerChangeSet.getComment()
+              // not permitted println innerChangeSet.getComment()
               println innerChangeSet.getCommentAnnotated()
               println innerChangeSet.getCommitId()
               println innerChangeSet.getId()
