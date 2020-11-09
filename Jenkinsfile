@@ -108,10 +108,11 @@ pipeline {
   }
   post {
     always {
-      junit 'reports/unit/*.xml'
-      cobertura(
-        coberturaReportFile: 'reports/coverage/*.xml'
-      )
+      echo 'it is over..'
+//       junit 'reports/unit/*.xml'
+//       cobertura(
+//         coberturaReportFile: 'reports/coverage/*.xml'
+//       )
     }
   }
 }
