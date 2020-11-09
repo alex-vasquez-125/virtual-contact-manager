@@ -19,10 +19,11 @@ pipeline {
           println currentBuild.getBuildVariables()
 
           def changeSetList = currentBuild.getChangeSets()
-          println "changeSetList class: $changeSetList.getClass()"
+          println "changeSetList class"
+          println changeSetList.getClass()
 
 
-          
+
           changeSetList.eachWithIndex { changeSet, index ->
             println "index: $index"
             println "changeSet: $changeSet"
