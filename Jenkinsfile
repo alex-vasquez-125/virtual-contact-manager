@@ -7,7 +7,6 @@ pipeline {
   stages {
     stage('Unit test') {
       steps {
-        sh 'env'
         echo 'running npm install'
         sh 'npm install'
         echo 'running unit tests'
@@ -19,7 +18,8 @@ pipeline {
           println causes
           println specificCause
           println "currentBuild"
-          println currentBuild
+          println currentBuild.getClass()
+          println currentBuild.rawBuild.getClass()
         }
       }
     }
