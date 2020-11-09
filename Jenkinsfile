@@ -21,7 +21,7 @@ pipeline {
           println currentBuild.getClass()
           println "build causes"
           println causes.userId
-          println causes.userName
+          println causes.shortDescription
           // script not permitted to use this method println currentBuild.rawBuild.getClass()
           // script not permitted to use this method println currentBuild.getRawBuild()
         }
