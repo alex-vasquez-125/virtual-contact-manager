@@ -14,12 +14,10 @@ pipeline {
         sh 'npm run test'
         sh 'env'
         script {
-          env.NEW_VERSION = '1'
-          echo 'about to try if block'
-          sh 'env'
-          sh 'echo $0'
-          sh "if [ -z \"$NEW_VERSION\" ]; then echo \"nothing in new version\"; else sed -i \"s/0.0.0/$NEW_VERSION.1.1/g\" package.json; fi"
-          sh 'cat package.json'
+          def causes = currentBuild.getBuildCauses()
+          def specificCause = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
+          println causes
+          println specificCause
         }
       }
     }
