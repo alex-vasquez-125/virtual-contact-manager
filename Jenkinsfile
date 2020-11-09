@@ -19,7 +19,8 @@ pipeline {
           println specificCause
           println "currentBuild"
           println currentBuild.getClass()
-          println currentBuild.rawBuild.getClass()
+          // script not permitted to use this method println currentBuild.rawBuild.getClass()
+          println currentBuild.getRawBuild()
         }
       }
     }
