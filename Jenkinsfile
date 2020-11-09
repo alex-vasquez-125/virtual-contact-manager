@@ -49,7 +49,6 @@ pipeline {
             }
             // script not permitted to access this def gitChangeSetList = changeSet.getLogs()
           } // 0 & hudson.plugins.git.GitChangeSetList@2fe172db
-
           println currentBuild.getCurrentResult() // SUCCESS
           println currentBuild.getDescription() // null
           println currentBuild.getDisplayName() // build number #19
