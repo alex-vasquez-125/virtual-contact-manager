@@ -21,6 +21,7 @@ pipeline {
           def changeSetList = currentBuild.getChangeSets()
           println "changeSetList class"
           println changeSetList.getClass()
+          println changeSetList.getKind()
 
 
 
@@ -28,6 +29,16 @@ pipeline {
             println "index: $index"
             println "changeSet: $changeSet"
             println changeSet
+            println changeSet.getAuthor()
+            println changeSet.getAuthorEmail()
+            println changeSet.getBranch()
+            println changeSet.getComment()
+            println changeSet.getCommentAnnotated()
+            println changeSet.getCommitId()
+            println changeSet.getId()
+            println changeSet.getMsg()
+            println changeSet.getParentCommit()
+            println changeSet.getRevision()
             // script not permitted to access this def gitChangeSetList = changeSet.getLogs()
             changeSet.eachWithIndex { innerChangeSet, innerIndex ->
               println "innerChangeSet"
