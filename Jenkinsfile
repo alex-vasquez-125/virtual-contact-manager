@@ -25,6 +25,7 @@ pipeline {
           println currentBuild.getFullProjectName()
           println currentBuild.getId()
           println currentBuild.getNumber()
+          println "done checking currentBuild"
           // script not permitted to use this method println currentBuild.rawBuild.getClass()
           // script not permitted to use this method println currentBuild.getRawBuild()
         }
