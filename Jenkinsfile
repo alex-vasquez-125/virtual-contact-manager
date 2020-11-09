@@ -29,7 +29,7 @@ pipeline {
             println "changeSet: $changeSet"
             println changeSet
             // script not permitted to access this def gitChangeSetList = changeSet.getLogs()
-            gitChangeSetList.eachWithIndex { innerChangeSet, innerIndex ->
+            changeSet.eachWithIndex { innerChangeSet, innerIndex ->
               println "innerChangeSet"
               println innerChangeSet
               println innerIndex
